@@ -32,10 +32,17 @@ git reflog
 // 撤销操作
 
 git checkout -- textName
-// 将工作区文件修改成暂存区（优先）或最新版本库版本，"--"很重要
+// 将工作区文件（即使已删除）修改成暂存区（优先）或最新版本库版本，"--"很重要
 
 git reset head textName
 // 可以把暂存区的修改撤销掉（unstage），重新放回工作区
 
 git reset --hard head^
 // 回退至上一版本
+
+// 删除
+
+git rm textName
+// 将文件从版本库删除
+git commit -m "deciration"
+// 更新版本库
