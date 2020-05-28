@@ -1,7 +1,7 @@
 Git is a version control system.
 Git is free software.
 
-Git is a distributed version control system.
+Git (这里有改动) version control system.
 Git is free software.
 
 试点范围为
@@ -9,3 +9,5 @@ Git is free software.
 
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
+
+让t1结束更新吧
