@@ -43,10 +43,14 @@ git reset --hard head^
 // 删除
 
 git rm textName
-// 将文件从版本库删除，到这一步如果后悔的话得先做完以下步骤，在试用版本回退到删除前的版本号
+// 将文件从版本库删除，到这一步如果后悔的话得先做完以下步骤，再试用版本回退到删除前的版本号（版本号均会有历史记录）
 git commit -m "deciration"
 // 更新版本库
 
 // 恢复
 git checkout -- textName
 // 将对应文件恢复到工作区
+
+
+ssh-keygen -t rsa -C "youremail@example.com"
+SSH保存路径：/c/Users/(iiqpii)/.ssh
