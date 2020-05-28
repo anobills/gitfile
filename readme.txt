@@ -43,6 +43,10 @@ git reset --hard head^
 // 删除
 
 git rm textName
-// 将文件从版本库删除
+// 将文件从版本库删除，到这一步如果后悔的话得先做完以下步骤，在试用版本回退到删除前的版本号
 git commit -m "deciration"
 // 更新版本库
+
+// 恢复
+git checkout -- textName
+// 将对应文件恢复到工作区
