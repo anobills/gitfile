@@ -19,9 +19,23 @@ git log (--pretty=oneline)
 
 git reset --hard head^
 // 回退至上一版本
+git reset --hard head~n
+// 回退n次
 
 git reset --hard commitId
 // 回退到对应commitId版本
 
 git reflog
 // 查看历史版本回退记录
+
+
+// 撤销操作
+
+git checkout -- textName
+// 将工作区文件修改成暂存区（优先）或最新版本库版本，"--"很重要
+
+git reset head textName
+// 可以把暂存区的修改撤销掉（unstage），重新放回工作区
+
+git reset --hard head^
+// 回退至上一版本
