@@ -51,7 +51,16 @@ git commit -m "deciration"
 git checkout -- textName
 // 将对应文件恢复到工作区
 
+// 关联github
 
 ssh-keygen -t rsa -C "youremail@example.com"
 SSH保存路径：/c/Users/(iiqpii)/.ssh
 xiaobaicai159
+
+git remote add origin SSH地址（eg:git@github.com:michaelliao/learngit.git）
+
+git push -u origin master
+// 第一次上传
+
+git push origin master
+// 之后上传远程仓库
