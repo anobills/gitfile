@@ -19,3 +19,7 @@ git branch -d 分支名
 
 git log --graph
 // 查看分支合并图
+
+
+git merge --no-ff -m "deciration" 分支名
+// master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活
