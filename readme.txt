@@ -64,3 +64,8 @@ git push -u origin master
 
 git push origin master
 // 之后上传远程仓库
+
+
+
+git clone git地址（SSH/https）
+// 远程库克隆
