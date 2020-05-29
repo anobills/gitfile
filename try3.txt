@@ -66,3 +66,5 @@ git branch --set-upstream-to=origin/dev dev
 
 git rebase
 // pull之后，push之前使用，将曲线历史记录变成直线
+
+以下详情请看try5.txt
