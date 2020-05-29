@@ -69,3 +69,5 @@ git push origin master
 
 git clone git地址（SSH/https）
 // 远程库克隆
+
+以下详情见try3.txt
