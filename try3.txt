@@ -7,7 +7,7 @@ git switch -c 分支名
 git branch
 // 查看当前分支
 
-git merge
+git merge 分支名
 // 合并
 
 git branch -d 分支名
