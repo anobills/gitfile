@@ -10,5 +10,12 @@ git branch
 git merge 分支名
 // 合并
 
+git branch 分支名
+// 创建分支
+
 git branch -d 分支名
 // 删除该分支
+
+
+git log --graph
+// 查看分支合并图
