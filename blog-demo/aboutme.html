@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        body{
+            min-width: 300px;
+            background-color: #444;
+            text-align: center;
+            color: #fff; 
+        }
+        #canvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(121, 121, 121, 0.37);
+            z-index: -2;
+        }
+        .wrap{
+            display: inline-block;
+            margin: 150px auto;
+            border-radius: 50%;
+            transition: .5s;
+        }
+        .wrap:hover{
+            display: flex;
+            min-width: 300px;
+            max-width: 700px;
+            background-color: rgba(114, 66, 66, 0.562);
+            margin: 20px auto;
+            border-radius: 20px;
+            border: none;
+        }
+        
+        .author{
+            position: relative;
+            flex: 0 0 auto;
+            width: 100px;
+            margin: auto;
+            z-index: 10;
+        }
+        .author img{
+            display: block;
+            
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 3px double #fff;
+            border-radius: 50%;
+        }
+        .introduction{
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 0;
+            height: 0;
+            background-color: rgba(102, 102, 102, 0.774);
+            font-size: 16px;
+            transition: .5s;
+        }
+        .introduction-wrap{
+            position: absolute;
+            left: 0;
+            top: 20px;
+            right: -17px;
+            bottom: 0;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .wrap:hover .introduction{
+            display: block;
+            width: 400px;
+            height: 750px;
+            padding: 40px 0;
+        }
+        .introduction ul{
+            margin-top: 40px;
+        }
+        .introduction .data li{
+            display: flex;
+            vertical-align: top;
+        }
+        .introduction .tech li{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .progress{
+            display: inline-block;
+            width: 70%;
+            height: 10px;
+            margin: 6px 10px;
+        }
+        .text{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="header navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="#">Moope的个人博客</a>
+          <ul class="nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">APP</a></li>
+            <li class="active"><a href="#">关于</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="author">
+            <!-- <img src="./img/list2.jpg" width="100" height="100" alt=""> --><!-- bootstrap不支持width和height -->
+            <img src="./img/list2.jpg">
+        </div>
+        <div class="introduction">
+            <div class="introduction-wrap">
+                <p>姓名：<span>黄伟业</span></p>
+                <p>性别：<span>男</span></p>
+                <p>出生年月：<span>1999年8月</span></p>
+                <p>国籍：<span>中国</span></p>
+                <p>毕业院校：<span>广东第二师范学院(电子信息工程专业)</span></p>
+                <ul class="data">
+                    <li>
+                        <p class="text-left">努力</p>
+                        <div class="progress">
+                            <div class="bar" style="width: 60%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="text-left">热爱</p>
+                        <div class="progress">
+                            <div class="bar" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="text-left">坚持</p>
+                        <div class="progress">
+                            <div class="bar" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                </ul>
+                <h2>技术栈</h2>
+                <ul class="tech">
+                    <li>
+                        <img src="./img/vue.png" alt="">
+                        <p>vue</p>
+                    </li>
+                    <li>
+                        <img src="./img/koa.png" alt="">
+                        <p>koa</p>
+                    </li>
+                    <li>
+                        <img src="./img/mongodb.png" alt="">
+                        <p>mongodb</p>
+                    </li>
+                    <!-- <li>
+                        <p>bootstrap</p>
+                        <img src="./img/bootstrap.png" alt="">
+                    </li> -->
+                </ul>
+                <p class="text-left text">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp一个在前端匍匐前进的小菜鸟，不会去追求各个方面都非常优秀的一个人，但会努力做到能被周围的人认可，喜欢自己制作的东西实用且能得到大家的赞赏，因此我走进了前端，人活一世，总得有一些坚持让自己的生活有所期待，当初选择了前端，那么即使前路有些迷茫，我也会坚持走下去。
+                </p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+
+    <script>
+        var data=[],num=200,r=2,cxt,speed=1,mouseX,mouseY;
+        function init(){
+            // 1.初始化画布
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            for(let i=0;i<num;i++){
+                let x = Math.random()*innerWidth;
+                let y = Math.random()*innerHeight;
+                data[i] = {
+                    x,y,
+                    rx: Math.random()*2*speed-speed,
+                    ry: Math.random()*2*speed-speed
+                };
+                // console.log(data[i])
+                circle(x,y,r);
+            }
+        }
+        function circle(x,y,r){
+            cxt = canvas.getContext("2d"); // 绘画环境
+            cxt.save(); //规范
+            cxt.beginPath();    //规范
+            cxt.fillStyle = "#09d"; // 画笔填充颜色
+            cxt.arc(x,y,r,0,2*Math.PI,false);
+            cxt.closePath();    // 规范
+            cxt.fill();     // 产生圆
+            cxt.restore(); // 规范
+        }
+        function lineD(x1,y1,x2,y2){
+            cxt.save(); //规范
+            
+            // let line = cxt.createLinearGradient(x1,y1,x2,y2);
+            // line.addColorStop(0,'red');
+            // line.addColorStop(1,'blue');
+            cxt.lineWidth = 1;
+            // cxt.strokeStyle = line;
+            cxt.strokeStyle = '#fff';
+
+            cxt.beginPath();    //规范
+            cxt.moveTo(x1,y1);
+            cxt.closePath();    // 规范
+            cxt.lineTo(x2,y2);
+            cxt.stroke();
+            cxt.restore(); // 规范
+        }
+        function run(){
+            setInterval(()=>{
+                cxt.clearRect(0,0,canvas.width,canvas.height)
+                for(let i=0;i<num;i++){
+                    data[i].x+=data[i].rx;
+                    data[i].y+=data[i].ry;
+                    if(data[i].x<0||data[i].x>canvas.width){
+                        data[i].rx= -data[i].rx;
+                    }
+                    if(data[i].y<0||data[i].y>canvas.height){
+                        data[i].ry= -data[i].ry;
+                    }
+                    circle(data[i].x,data[i].y,r);
+
+                    for(let j=i+1;j<num;j++){
+                        if(Math.pow(data[i].x-data[j].x,2)+Math.pow(data[i].y-data[j].y,2)<=60*60){
+                            
+                            lineD(data[i].x,data[i].y,data[j].x,data[j].y);
+                        }
+                        
+                    }
+                    if(data[num+1]){
+                        if(Math.pow(data[i].x-data[num+1].x,2)+Math.pow(data[i].y-data[num+1].y,2)<=60*60){
+                        
+                            lineD(data[i].x,data[i].y,data[num+1].x,data[num+1].y);
+                        }
+                    }
+                    
+                }
+            },40)
+            
+        }
+        addEventListener("mousemove",(event)=>{
+            var e = event ||window.event;
+            // console.log(e.screenX,e.clientX,e.pageX);// e.screenX 屏幕,e.clientX ,e.pageX 页面
+            data[num+1] = {x:e.clientX,y:e.clientY,rx:0,ry:0};
+            for(let i=0;i<num;i++){
+                if(Math.pow(data[i].x-data[num+1].x,2)+Math.pow(data[i].y-data[num+1].y,2)<=60*60){
+                    
+                    lineD(data[i].x,data[i].y,data[num+1].x,data[num+1].y);
+                }
+                
+            }
+        })
+
+        // onclick=()=>{
+        //     var aa = canvas.toDataURL("image/jpeg", 1.0);
+        //     console.log(aa)
+        // }
+        addEventListener("resize",function(){
+            // location.reload();//页面进行刷新
+            init();
+        })
+
+
+
+        init();
+        run();
+    </script>
+</body>
+</html>

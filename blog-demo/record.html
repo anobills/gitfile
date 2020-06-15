@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        body{
+            min-width: 300px;
+            background-color: #444;
+            text-align: center;
+            color: #fff; 
+        }
+        .list-wrap{
+            position: relative;
+            max-width: 1200px;
+            padding: 40px 0;
+            background-color: rgba(112, 112, 112, 0.658);
+            margin: 20px auto;
+        }
+        .string{
+            position: absolute;
+            left: 70px;
+            top: 30px;
+            bottom: -10px;
+            width: 10px;
+            background-color: rgba(255, 255, 255, 0.63);
+            border-radius: 5px 5px 0 0;
+            z-index: 1;
+        }
+        .list-wrap ul{
+            position: relative;
+            list-style-type: none;
+            z-index: 1;
+        }
+        .list-wrap li{
+            /* width: 50px; */
+            margin: 40px;
+        }
+        .circle{
+            width: 30px;
+            height: 30px;
+            background-color: aquamarine;
+            border-radius: 15px;
+            transition: .5s;
+            
+        }
+        .circle:hover{
+            width: 80%;
+            border-radius: 0 0 100% 15px;
+        }
+        .circle .text{
+            position: relative;
+            left: 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            padding: 10px 30px;
+            background-color: rgb(255, 175, 78);
+            border-radius: 0 0 100% 15px;
+            opacity: 0;
+            transition: .3s;
+        }
+        .circle:hover .text{
+            overflow: visible;
+            min-width: 250px;
+            width: 100%;
+            height: auto;
+            opacity: 1;
+            z-index: 5;
+        }
+        .list-wrap li p{
+            margin-left: 40px;
+        }
+        .circle:hover + p{
+            opacity: 0;
+        }
+
+
+        .logo-wrap{
+            position: fixed;
+            left: 35%;
+            top: 30%;
+            z-index: -2;
+        }
+        .logo-wrap h2{
+            font-family: "youyuan";
+        }
+        .logo{
+            height: 240px;
+        }
+        .logo .bg{
+            width: 120px;
+            height: 120px;
+            background-color: rgb(0, 167, 167);
+            margin: auto;
+            box-shadow: -60px 60px 50px -24px #000;
+            transform: rotateZ(-45deg);
+        }
+        .logo .bg div{
+            width: 80px;
+            height: 15px;
+            margin:10px 0;
+            background-color: #fff;
+            border: 1px solid gray;
+            box-shadow: 0px 1px 6px #000;
+        }
+        .logo .bg .three,.logo .bg .one{
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="#">Moope的个人博客</a>
+          <ul class="nav">
+            <li><a href="#">首页</a></li>
+            <li class="active"><a href="#">学习记录</a></li>
+            <li><a href="#">关于</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="list-wrap">
+        <div class="string"></div>
+        <ul>
+            <li>
+                <div class="circle">
+                    <div class="text text-left"></div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle"></div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+            <li>
+                <div class="circle">
+                    <div class="text text-left">今天网站正式上线</div>
+                </div>
+                <p class="text-left">2020.4.28</p>
+            </li>
+        </ul>
+    </div>
+    <div class="logo-wrap">
+        <div class="logo">
+            <div class="bg">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+        </div>
+        <h2>每一点滴都将在未来感动自己</h2>
+    </div>
+    
+</body>
+</html>

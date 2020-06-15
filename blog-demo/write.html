@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .wrap{
+            box-sizing: border-box;
+            width: 80%;
+            padding: 20px;
+            background-color: rgb(129, 107, 79);
+            margin: auto;
+            cursor: url(./img/default.cur),default;
+        }
+        h2,h4{
+            color: #fff;
+        }
+        input{
+            width: 90%;
+        }
+        textarea{
+            width: 90%;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        <h2>后台界面</h2>
+        <input type="submit" id="submit" value="添加到学习记录">
+        <br>
+        <br>
+        <!-- <input type="text"> -->
+        <br>
+        <textarea name="artical" id="" cols="30" rows="10"></textarea>
+        <h4>上传图片文件</h4>
+        <input type="file" id="file">
+    </div>
+    <script>
+        function ajax(str,callback){
+            return new Promise((res,rej)=>{
+                    let oAjax = new XMLHttpRequest();
+                    oAjax.onreadystatechange = function (){
+                        if(oAjax.readyState == 4&& oAjax.status == 200){
+                            callback(oAjax.responseText);
+                            res();
+                        }
+                    }
+                    oAjax.open('GET', str);
+                    oAjax.send();
+            })
+        }
+        let data = {
+            
+        }
+        file.onchange = function(){
+            var fileReader=new FileReader();
+            fileReader.readAsDataURL(this.files[0]);
+            fileReader.onload = function(){
+                data.imgUrl = this.result;
+            }
+        }
+
+        submit.onclick = ()=>{
+            let text = document.querySelector('textarea');
+            // console.log(text.value);
+            data.text = text.value;
+            data.year = new Date().getFullYear();
+            data.month = new Date().getMonth();
+            data.day = new Date().getUTCDate();
+            console.log(data);
+
+            // ajax('/write',(res)=>{
+            //     alert(res)
+            // })
+        }
+        
+        
+        
+        
+    </script>
+</body>
+</html>
